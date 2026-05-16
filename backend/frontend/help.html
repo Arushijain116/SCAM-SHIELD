@@ -1,0 +1,142 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+  <title>Help & Info</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="light">
+
+ 🔝 NAVBAR -->
+<!--<div class="navbar">
+  <div class="logo">🛡️ Scam Shield</div>
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="scan.html">Scan</a>
+    <a href="analytics.html">Analytics</a>
+    <a href="help.html" class="active">Help</a>
+  </div>
+</div>
+
+<!-- 🎯 HEADING -->
+<!--<h1 class="heading">Help & Info</h1>
+<p class="subheading">Learn about scams, stay safe, and explore trusted resources</p>
+
+ 🔥 CARDS GRID -->
+<!--<div class="help-grid">
+
+  <div class="help-card" onclick="goPage('alerts.html')">
+    <img src="https://cdn-icons-png.flaticon.com/512/1827/1827392.png">
+    <h3>Scam Alerts</h3>
+  </div>
+
+  <div class="help-card" onclick="goPage('learn.html')">
+    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png">
+    <h3>Learn Scams</h3>
+  </div>
+
+  <div class="help-card" onclick="goPage('sites.html')">
+    <img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png">
+    <h3>Reliable Sites</h3>
+  </div>
+
+  <div class="help-card" onclick="goPage('advice.html')">
+    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135789.png">
+    <h3>Advices</h3>
+  </div>
+
+  <div class="help-card" onclick="goPage('studies.html')">
+    <img src="https://cdn-icons-png.flaticon.com/512/3039/3039437.png">
+    <h3>Studies</h3>
+  </div>
+
+  <div class="help-card" onclick="goPage('global.html')">
+    <img src="https://cdn-icons-png.flaticon.com/512/3212/3212608.png">
+    <h3>Global Scams</h3>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Help & Info</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark">
+
+<!-- 🔝 NAVBAR -->
+<div class="navbar">
+  <div class="logo">🛡️ Scam Shield</div>
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="scan.html">Scan</a>
+    <a href="analytics.html">Analytics</a>
+    <a href="help.html" class="active">Help</a>
+  </div>
+</div>
+
+<!-- 🎯 HEADING -->
+<h1 class="heading">🧠 Help & Info Center</h1>
+<p class="subheading">
+  Learn about scams, understand risks, and protect yourself effectively
+</p>
+
+<!-- 🔥 CARDS GRID -->
+<div class="help-grid">
+
+  <!-- 🔥 NEW INTERACTIVE CARDS -->
+  <div class="help-card" onclick="openInfo('alerts')">
+    <h3>🚨 Scam Alerts</h3>
+    <p>Latest fraud patterns</p>
+  </div>
+
+  <div class="help-card" onclick="openInfo('learn')">
+    <h3>📚 Learn Scams</h3>
+    <p>Understand scam types</p>
+  </div>
+
+  <div class="help-card" onclick="openInfo('advice')">
+    <h3>🛡️ Safety Advice</h3>
+    <p>Protect yourself online</p>
+  </div>
+
+  <div class="help-card" onclick="openInfo('ai')">
+    <h3>🧠 How Detection Works</h3>
+    <p>How Scam Shield analyzes threats</p>
+  </div>
+
+  <!-- 🔒 KEEPING YOUR EXISTING NAVIGATION FEATURES -->
+  <div class="help-card" onclick="goPage('sites.html')">
+    <h3>🌐 Reliable Sites</h3>
+    <p>Trusted resources</p>
+  </div>
+
+  <div class="help-card" onclick="goPage('studies.html')">
+    <h3>📊 Studies</h3>
+    <p>Research & reports</p>
+  </div>
+
+  <div class="help-card" onclick="goPage('global.html')">
+    <h3>🌍 Global Scams</h3>
+    <p>Worldwide fraud trends</p>
+  </div>
+
+</div>
+
+<!-- 🔥 INFO PANEL (NEW FEATURE) -->
+<div id="infoBox" class="info-box hidden">
+  <div id="infoContent"></div>
+  <button onclick="closeInfo()">Close</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

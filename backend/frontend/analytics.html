@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Analytics - Scam Shield</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      background: #020617;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background: #0f172a;
+    }
+
+    .nav-links a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .charts {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .chart-box {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      width: 350px;
+    }
+
+    canvas {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <div>🛡️ Scam Shield</div>
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="scan.html">Scan</a>
+    <a href="help.html">Help</a>
+    <button onclick="logout()">Logout</button>
+  </div>
+</div>
+
+<div class="container">
+  <h1>📊 Analytics Dashboard</h1>
+  <p>Visual insights of scam detection activity</p>
+
+  <div class="insights-box">
+  <h2>🧠 AI Insights</h2>
+  <ul id="insightsList">
+    <li>Analyzing data...</li>
+  </ul>
+  </div>
+
+  <div class="charts">
+
+    <div class="chart-box">
+      <h3>Scam vs Safe</h3>
+      <canvas id="pieChart"></canvas>
+    </div>
+
+    <div class="chart-box">
+      <h3>Recent Activity</h3>
+      <canvas id="barChart"></canvas>
+    </div>
+
+    <div class="chart-box">
+      <h3>Risk Distribution</h3>
+      <canvas id="riskChart"></canvas>
+    </div>
+
+  </div>
+</div>
+
+<!-- 🔥 REQUIRED -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+<script>
+  // Force analytics load
+  window.onload = () => {
+    console.log("Analytics Page Loaded 📊");
+    loadStats();
+  };
+</script>
+
+</body>
+</html>

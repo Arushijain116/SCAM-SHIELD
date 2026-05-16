@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard - Scam Shield</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark">
+
+<div class="navbar">
+  <div class="logo">🛡️ Scam Shield</div>
+  <div class="nav-links">
+    <a href="scan.html">Scan</a>
+    <a href="analytics.html">Analytics</a>
+    <a href="help.html">Help</a>
+    <button onclick="logout()">Logout</button>
+  </div>
+</div>
+
+<h2 class="heading">Dashboard Overview</h2>
+
+<!-- 🔥 FILE UPLOAD (ADDED HERE) -->
+<div class="upload-box">
+  <input type="file" id="fileInput" />
+  <button onclick="uploadFile()">Upload File</button>
+</div>
+
+<!-- 🔢 STATS -->
+<div class="dashboard">
+  <div class="card">
+    <h2 id="total">0</h2>
+    <p>Total Scans</p>
+  </div>
+
+  <div class="card">
+    <h2 id="scam">0</h2>
+    <p>Scam Detected</p>
+  </div>
+
+  <div class="card">
+    <h2 id="safe">0</h2>
+    <p>Safe Messages</p>
+  </div>
+</div>
+
+<!-- 📊 CHARTS -->
+<div class="charts">
+
+  <div class="chart-box">
+    <h3>Threat Distribution</h3>
+    <canvas id="pieChart"></canvas>
+  </div>
+
+  <div class="chart-box">
+    <h3>Recent Activity</h3>
+    <canvas id="barChart"></canvas>
+  </div>
+
+</div>
+
+<!-- 🚨 ACTIVE SCAM ALERTS -->
+<div class="alerts-section">
+
+  <div class="alerts-header">
+    <div class="alert-icon">⚠️</div> <!-- ✅ FIXED -->
+    <div>
+      <h2>Active Scam Alerts</h2>
+      <p>Real-time warnings about ongoing fraud threats</p>
+    </div>
+  </div>
+
+  <div id="alertsFeed" class="alerts-feed"></div>
+
+</div>
+
+<!-- 📜 HISTORY -->
+<div class="history">
+  <h3>Recent Scans</h3>
+  <table id="historyTable">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Message</th>
+        <th>Risk</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<!-- 🚨 ALERTS -->
+<div class="alerts">
+  <h3>Live Alerts</h3>
+  <div id="alertsContainer"></div>
+</div>
+
+<!-- 👑 ADMIN PANEL -->
+<div id="adminPanel"></div>
+
+<!-- 🔔 NOTIFICATIONS -->
+<div id="notificationBox" class="notifications"></div>
+
+<!-- 🔥 SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

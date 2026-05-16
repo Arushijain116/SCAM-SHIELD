@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scam Studies</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="light">
+
+<div class="help-container">
+
+  <div class="help-box">
+
+    <h1 class="help-title">📄 Scam Studies</h1>
+
+    <div class="help-section">
+      <h3>📊 Key Findings</h3>
+      <img src="https://cdn-icons-png.flaticon.com/512/3039/3039437.png" class="help-img">
+      <ul>
+        <li>70% scams target mobile users</li>
+        <li>Students are major victims</li>
+        <li>Phishing is most common</li>
+      </ul>
+    </div>
+
+    <div class="help-section">
+      <h3>📈 Growth Trend</h3>
+      <canvas id="trendChart"></canvas>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+new Chart(document.getElementById("trendChart"), {
+  type: "line",
+  data: {
+    labels: ["2021","2022","2023","2024"],
+    datasets: [{
+      label: "Scam Growth",
+      data: [20, 35, 60, 85]
+    }]
+  }
+});
+</script>
+
+</body>
+</html>
