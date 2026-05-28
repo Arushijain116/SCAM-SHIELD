@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-slate-950 via-blue-950 to-black min-h-screen text-white">
+
+<div class="max-w-6xl mx-auto p-10">
+
+    <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-10 shadow-2xl">
+
+        <h1 class="text-5xl font-bold text-center mb-10">
+            Security Analysis 📊
+        </h1>
+
+        <div class="text-center mb-10">
+
+           <div class="flex justify-center mb-10">
+
+    <div class="relative w-64 h-64">
+
+        <svg class="transform -rotate-90 w-64 h-64">
+
+            <circle
+                cx="128"
+                cy="128"
+                r="100"
+                stroke="#1f2937"
+                stroke-width="18"
+                fill="transparent" />
+
+            <circle
+                cx="128"
+                cy="128"
+                r="100"
+                stroke="
+                {% if score >= 70 %}
+                    #ef4444
+                {% elif score >= 40 %}
+                    #facc15
+                {% else %}
+                    #22c55e
+                {% endif %}
+                "
+                stroke-width="18"
+                fill="transparent"
+                stroke-dasharray="628"
+                stroke-dashoffset="{{ 628 - (score * 6.28) }}"
+                stroke-linecap="round" />
+
+        </svg>
+
+        <div
+            class="absolute inset-0 flex flex-col items-center justify-center">
+
+            <h1 class="text-6xl font-bold">
+                {{ score }}
+            </h1>
+
+            <p class="text-gray-300">
+                Trust Score
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+        </div>
+
+        <h2 class="text-4xl text-center font-bold mb-8">
+            {{ level }}
+        </h2>
+
+        <div class="bg-black/30 p-6 rounded-2xl mb-8">
+            <h3 class="text-2xl font-bold mb-4">
+                Analyzed Message
+            </h3>
+
+            <p>{{ message }}</p>
+        </div>
+
+        <div class="bg-red-500/10 border border-red-500 p-6 rounded-2xl">
+
+            <h3 class="text-2xl font-bold text-red-400 mb-4">
+                Risk Factors ⚠️
+            </h3>
+
+            <ul class="space-y-3">
+
+                {% for reason in reasons %}
+                    <li>• {{ reason }}</li>
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+        <!-- AI EXPLANATION -->
+
+<div
+    class="mt-8 bg-blue-500/10 border border-blue-500 rounded-3xl p-8">
+
+    <h2 class="text-2xl font-bold text-blue-400 mb-4">
+
+        🤖 AI Security Explanation
+
+    </h2>
+
+    <p class="text-lg text-gray-300 leading-relaxed">
+
+        {{ explanation }}
+
+    </p>
+
+</div>
+
+        <a
+            href="/scan"
+            class="block text-center mt-10 bg-red-600 hover:bg-red-700 p-5 rounded-2xl text-xl"
+        >
+            Scan Another 🚀
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

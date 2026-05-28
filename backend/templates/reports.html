@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reports</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-slate-950 via-blue-950 to-black min-h-screen text-white">
+
+<nav class="bg-gradient-to-r from-blue-900 to-red-700 p-5 flex justify-between">
+
+    <h1 class="text-3xl font-bold">
+        📊 Scam Reports
+    </h1>
+
+    <div class="space-x-6">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/scan">Scan</a>
+        <a href="/reports" class="text-yellow-300">Reports</a>
+        <a href="/learn">Learn</a>
+        <a href="/alerts">Alerts</a>
+        <a
+    href="/export_pdf"
+    class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-2xl">
+
+    Export PDF 📄
+
+</a>
+    </div>
+
+</nav>
+
+<div class="max-w-7xl mx-auto p-10">
+
+    <!-- STATS -->
+    <div class="grid md:grid-cols-3 gap-8 mb-10">
+
+        <div class="bg-red-500/10 border border-red-500 p-6 rounded-3xl">
+            <h2 class="text-2xl mb-3">High Risk</h2>
+            <p class="text-5xl font-bold text-red-400">{{ high }}</p>
+        </div>
+
+        <div class="bg-yellow-500/10 border border-yellow-500 p-6 rounded-3xl">
+            <h2 class="text-2xl mb-3">Medium Risk</h2>
+            <p class="text-5xl font-bold text-yellow-300">{{ medium }}</p>
+        </div>
+
+        <div class="bg-green-500/10 border border-green-500 p-6 rounded-3xl">
+            <h2 class="text-2xl mb-3">Low Risk</h2>
+            <p class="text-5xl font-bold text-green-400">{{ low }}</p>
+        </div>
+
+    </div>
+
+    <!-- TABLE -->
+    <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-8 shadow-2xl overflow-x-auto">
+
+        <table class="w-full">
+
+            <thead>
+
+                <tr class="border-b border-gray-700 text-left">
+
+                    <th class="p-4">Message</th>
+                    <th class="p-4">Score</th>
+                    <th class="p-4">Risk</th>
+                    <th class="p-4">Date</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% for scan in scans %}
+
+                <tr class="border-b border-gray-800 hover:bg-white/5">
+
+                    <td class="p-4">
+                        {{ scan.message[:60] }}
+                    </td>
+
+                    <td class="p-4">
+                        {{ scan.score }}
+                    </td>
+
+                    <td class="p-4">
+
+                        {% if 'High' in scan.level %}
+                            <span class="text-red-400 font-bold">
+                                {{ scan.level }}
+                            </span>
+
+                        {% elif 'Medium' in scan.level %}
+                            <span class="text-yellow-300 font-bold">
+                                {{ scan.level }}
+                            </span>
+
+                        {% else %}
+                            <span class="text-green-400 font-bold">
+                                {{ scan.level }}
+                            </span>
+
+                        {% endif %}
+
+                    </td>
+
+                    <td class="p-4">
+                        {{ scan.date.strftime('%Y-%m-%d') }}
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

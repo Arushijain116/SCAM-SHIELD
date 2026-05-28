@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Message - Scam Shield</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body class="bg-gradient-to-br from-slate-950 via-blue-950 to-black min-h-screen text-white overflow-x-hidden">
+
+    <!-- 🌈 TOP GLOW EFFECTS -->
+    <div class="absolute top-0 left-0 w-96 h-96 bg-red-600 opacity-20 blur-3xl rounded-full"></div>
+    <div class="absolute top-20 right-0 w-96 h-96 bg-blue-600 opacity-20 blur-3xl rounded-full"></div>
+
+    <!-- 🔷 NAVBAR -->
+    <nav
+        class="relative z-10 bg-gradient-to-r from-blue-950 via-indigo-900 to-red-900 shadow-2xl border-b border-white/10">
+
+        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+
+            <!-- LOGO -->
+            <div class="flex items-center gap-3">
+
+                <div
+                    class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500 to-pink-600 flex items-center justify-center shadow-lg">
+
+                    <i class="fa-solid fa-shield-halved text-2xl text-white"></i>
+
+                </div>
+
+                <div>
+                    <h1 class="text-3xl font-bold tracking-wide">
+                        Scam Shield
+                    </h1>
+
+                    <p class="text-sm text-gray-300">
+                        AI Scam Detection System
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- NAV LINKS -->
+            <div class="hidden md:flex gap-8 text-lg font-medium">
+
+                <a href="/dashboard"
+                    class="hover:text-yellow-300 transition duration-300">
+                    Dashboard
+                </a>
+
+                <a href="/scan"
+                    class="text-yellow-300 border-b-2 border-yellow-300 pb-1">
+                    Scan
+                </a>
+
+                <a href="/reports"
+                    class="hover:text-yellow-300 transition duration-300">
+                    Reports
+                </a>
+
+                <a href="/learn"
+                    class="hover:text-yellow-300 transition duration-300">
+                    Learn
+                </a>
+
+                <a href="/alerts"
+                    class="hover:text-yellow-300 transition duration-300">
+                    Alerts
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- 🚀 MAIN SECTION -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-14">
+
+        <!-- PAGE TITLE -->
+        <div class="text-center mb-14">
+
+            <h1
+                class="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-red-400 via-pink-400 to-yellow-300 bg-clip-text text-transparent mb-6">
+
+                AI Scam Analyzer 🔍
+
+            </h1>
+
+            <p class="text-gray-300 text-xl max-w-3xl mx-auto leading-relaxed">
+
+                Paste suspicious SMS, emails, job offers, bank alerts, or fraud messages.
+                Our AI engine will analyze scam patterns, urgency tactics, phishing attempts,
+                and digital arrest threats instantly.
+
+            </p>
+
+        </div>
+
+        <!-- 🧠 MAIN GRID -->
+        <div class="grid lg:grid-cols-3 gap-10">
+
+            <!-- 🔍 LEFT SIDE -->
+            <div class="lg:col-span-2">
+
+                <div
+                    class="bg-white/10 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 shadow-2xl">
+
+                    <!-- HEADER -->
+                    <div class="flex items-center gap-4 mb-8">
+
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-gradient-to-br from-red-500 to-pink-600 flex items-center justify-center shadow-xl">
+
+                            <i class="fa-solid fa-radar text-3xl"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h2 class="text-3xl font-bold">
+                                Scan Suspicious Message
+                            </h2>
+
+                            <p class="text-gray-300">
+                                AI-powered cyber fraud detection
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- FORM -->
+                    <form method="POST" action="/predict">
+
+                        <!-- TEXTAREA -->
+                        <!-- MESSAGE INPUT -->
+
+<div class="mt-10">
+
+    <label class="text-4xl font-bold text-white block mb-6">
+        Paste Message
+    </label>
+
+    <textarea
+        name="message"
+        rows="8"
+        class="
+            w-full
+            bg-[#1e2746]
+            border-2 border-pink-500
+            rounded-3xl
+            p-6
+            text-white
+            text-xl
+            placeholder-gray-400
+            focus:outline-none
+            focus:ring-4
+            focus:ring-pink-500
+            shadow-2xl
+            resize-none
+        "
+        placeholder="Paste suspicious message here OR upload screenshot below..."
+    ></textarea>
+
+</div>
+
+                        <!-- FILE UPLOAD -->
+                        <div class="mb-10">
+
+                            <label class="block text-lg mb-3 font-semibold text-gray-200">
+
+                                Upload Screenshot (Optional)
+
+                            </label>
+
+                            <div
+                                class="border-2 border-dashed border-gray-600 rounded-3xl p-10 text-center hover:border-red-500 transition duration-300 cursor-pointer bg-black/20">
+
+                                <i
+                                    class="fa-solid fa-cloud-arrow-up text-5xl text-red-400 mb-4"></i>
+
+                                <p class="text-xl font-semibold mb-2">
+                                    Drag & Drop Screenshot
+                                </p>
+
+                                <p class="text-gray-400">
+                                    PNG, JPG, JPEG Supported
+                                </p>
+
+                                <input
+                                    type="file"
+                                    class="mt-6 text-gray-300">
+
+                            </div>
+
+                        </div>
+
+                        <!-- BUTTON -->
+                        <button
+                            type="submit"
+                            class="w-full bg-gradient-to-r from-red-600 via-pink-600 to-red-700 hover:scale-[1.02] transition duration-300 text-white p-5 rounded-3xl text-2xl font-bold shadow-2xl">
+
+                            <i class="fa-solid fa-shield-virus mr-3"></i>
+
+                            Analyze Threat 🚨
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <!-- 📊 RIGHT SIDE -->
+            <div class="space-y-8">
+
+                <!-- AI FEATURES -->
+                <div
+                    class="bg-white/10 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 shadow-2xl">
+
+                    <h2 class="text-2xl font-bold mb-6 text-red-400">
+
+                        AI Detection Features
+
+                    </h2>
+
+                    <div class="space-y-5">
+
+                        <div class="flex gap-4 items-start">
+
+                            <div
+                                class="w-12 h-12 rounded-xl bg-red-500/20 flex items-center justify-center">
+
+                                <i class="fa-solid fa-user-secret text-red-400"></i>
+
+                            </div>
+
+                            <div>
+                                <h3 class="font-bold text-lg">
+                                    Phishing Detection
+                                </h3>
+
+                                <p class="text-gray-300 text-sm">
+                                    Detects fake banking and OTP scams.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+
+                            <div
+                                class="w-12 h-12 rounded-xl bg-yellow-500/20 flex items-center justify-center">
+
+                                <i class="fa-solid fa-triangle-exclamation text-yellow-400"></i>
+
+                            </div>
+
+                            <div>
+                                <h3 class="font-bold text-lg">
+                                    Urgency Analysis
+                                </h3>
+
+                                <p class="text-gray-300 text-sm">
+                                    Finds pressure tactics and threats.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+
+                            <div
+                                class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center">
+
+                                <i class="fa-solid fa-gavel text-blue-400"></i>
+
+                            </div>
+
+                            <div>
+                                <h3 class="font-bold text-lg">
+                                    Digital Arrest Detection
+                                </h3>
+
+                                <p class="text-gray-300 text-sm">
+                                    Identifies fake police/CBI threats.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- LIVE STATUS -->
+                <div
+                    class="bg-gradient-to-br from-red-600/20 to-pink-600/20 border border-red-500/30 rounded-3xl p-8 shadow-2xl">
+
+                    <h2 class="text-2xl font-bold mb-5">
+
+                        Live Protection Status 🛡️
+
+                    </h2>
+
+                    <div class="space-y-4">
+
+                        <div>
+
+                            <div class="flex justify-between mb-2">
+                                <span>Threat Detection</span>
+                                <span>98%</span>
+                            </div>
+
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div
+                                    class="bg-red-500 h-3 rounded-full w-[98%]"></div>
+                            </div>
+
+                        </div>
+
+                        <div>
+
+                            <div class="flex justify-between mb-2">
+                                <span>Fraud Recognition</span>
+                                <span>94%</span>
+                            </div>
+
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div
+                                    class="bg-yellow-400 h-3 rounded-full w-[94%]"></div>
+                            </div>
+
+                        </div>
+
+                        <div>
+
+                            <div class="flex justify-between mb-2">
+                                <span>AI Confidence</span>
+                                <span>96%</span>
+                            </div>
+
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div
+                                    class="bg-green-500 h-3 rounded-full w-[96%]"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

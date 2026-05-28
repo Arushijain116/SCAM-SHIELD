@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Scam Awareness</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        body {
+
+            font-family: 'Poppins', sans-serif;
+
+            background:
+            linear-gradient(
+                135deg,
+                #020024,
+                #090979,
+                #111827
+            );
+
+            overflow-x: hidden;
+        }
+
+        .glass {
+
+            background: rgba(255,255,255,0.08);
+
+            backdrop-filter: blur(18px);
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            transition: 0.4s;
+        }
+
+        .glass:hover {
+
+            transform: translateY(-10px) scale(1.02);
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,0.45);
+        }
+
+    </style>
+
+</head>
+
+<body class="text-white min-h-screen">
+
+<!-- NAVBAR -->
+
+<nav class="flex justify-between items-center px-10 py-6">
+
+    <h1 class="text-4xl font-extrabold">
+        🛡 Scam Awareness
+    </h1>
+
+    <div class="space-x-8 text-lg">
+
+        <a href="/dashboard"
+           class="hover:text-cyan-400">
+           Dashboard
+        </a>
+
+        <a href="/scan"
+           class="hover:text-cyan-400">
+           Scan
+        </a>
+
+        <a href="/reports"
+           class="hover:text-cyan-400">
+           Reports
+        </a>
+
+        <a href="/learn"
+           class="text-yellow-400 font-bold">
+           Learn
+        </a>
+
+        <a href="/alerts"
+           class="hover:text-cyan-400">
+           Alerts
+        </a>
+
+    </div>
+
+</nav>
+
+<!-- HEADING -->
+
+<div class="text-center mt-8 mb-16">
+
+    <h1 class="text-6xl font-extrabold mb-4">
+
+        Learn About Cyber Scams
+
+    </h1>
+
+    <p class="text-2xl text-gray-300">
+
+        Interactive awareness portal for modern scams
+
+    </p>
+
+</div>
+
+<!-- CARDS -->
+
+<div class="grid lg:grid-cols-3 md:grid-cols-2 gap-10 px-10 pb-20">
+
+    {% for scam in scam_categories %}
+
+    <div
+        onclick="openModal(
+            '{{ scam.title }}',
+            '{{ scam.description }}',
+            '{{ scam.example }}',
+            '{{ scam.risk }}',
+            `{{ scam.prevention|join("<br>• ") }}`
+        )"
+
+        class="glass rounded-[35px] p-8 cursor-pointer">
+
+        <div class="text-6xl mb-6">
+
+            {{ scam.icon }}
+
+        </div>
+
+        <h2 class="text-3xl font-bold mb-4">
+
+            {{ scam.title }}
+
+        </h2>
+
+        <p class="text-gray-300 text-lg leading-relaxed">
+
+            {{ scam.description }}
+
+        </p>
+
+        <div class="mt-6">
+
+            <span
+                class="bg-red-500/20
+                       text-red-300
+                       px-4 py-2 rounded-full">
+
+                {{ scam.risk }} Risk
+
+            </span>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+<!-- MODAL -->
+
+<div
+    id="scamModal"
+
+    class="fixed inset-0 bg-black/70
+           hidden justify-center items-center
+           z-50">
+
+    <div
+        class="bg-gray-900
+               w-[90%] max-w-3xl
+               rounded-[35px]
+               p-10">
+
+        <h2
+            id="modalTitle"
+            class="text-5xl font-bold mb-6">
+        </h2>
+
+        <p
+            id="modalDescription"
+            class="text-xl text-gray-300 mb-6">
+        </p>
+
+        <div class="mb-6">
+
+            <h3 class="text-2xl font-bold text-cyan-400 mb-3">
+
+                Real Example
+
+            </h3>
+
+            <p
+                id="modalExample"
+                class="text-lg text-gray-300">
+            </p>
+
+        </div>
+
+        <div class="mb-6">
+
+            <h3 class="text-2xl font-bold text-green-400 mb-3">
+
+                Prevention Tips
+
+            </h3>
+
+            <p
+                id="modalPrevention"
+                class="text-lg text-gray-300">
+            </p>
+
+        </div>
+
+        <button
+            onclick="closeModal()"
+
+            class="bg-red-500
+                   hover:bg-red-600
+                   px-8 py-3 rounded-xl
+                   text-xl font-bold">
+
+            Close
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- SCRIPT -->
+
+<script>
+
+function openModal(
+    title,
+    description,
+    example,
+    risk,
+    prevention
+) {
+
+    document.getElementById('modalTitle')
+        .innerText = title;
+
+    document.getElementById('modalDescription')
+        .innerText = description;
+
+    document.getElementById('modalExample')
+        .innerText = example;
+
+    document.getElementById('modalPrevention')
+        .innerHTML = "• " + prevention;
+
+    document.getElementById('scamModal')
+        .classList.remove('hidden');
+
+    document.getElementById('scamModal')
+        .classList.add('flex');
+}
+
+function closeModal() {
+
+    document.getElementById('scamModal')
+        .classList.add('hidden');
+
+    document.getElementById('scamModal')
+        .classList.remove('flex');
+}
+
+</script>
+
+</body>
+</html>

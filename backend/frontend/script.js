@@ -30,7 +30,7 @@ async function loginUser() {
         const data = await res.json();
 
         if (res.ok) {
-            window.location.href = "dashboard.html";
+            window.location.href = "/dashboard";
         } else {
             alert(data.error || "Login failed");
         }
@@ -134,7 +134,7 @@ async function scan() {
     });
 
     if (res.status === 401) {
-      window.location = "login.html";
+      window.location.href = "/login";
       return;
     }
 
